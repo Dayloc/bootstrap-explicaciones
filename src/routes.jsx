@@ -24,7 +24,7 @@ import Spacing from "./components/alineacion/spacing ";
 import Flexibility from "./components/alineacion/flexibilidad"
 import Responsiveness from "./components/alineacion/responsiv"
 import CompleteExample from "./components/alineacion/ejemploCompleto";
-
+import Dragonball from "./pages/dragonball"
 export const router = createBrowserRouter(
     createRoutesFromElements(
     // CreateRoutesFromElements function allows you to build route elements declaratively.
@@ -55,6 +55,7 @@ export const router = createBrowserRouter(
         <Route path="/flexibility" element={<Flexibility />} />
         <Route path="/responsiv" element={<Responsiveness />} />
         <Route path="/ejemploCompleto" element={<CompleteExample />} />
+        <Route path="/dragonball" element={<Dragonball />} />
       </Route>
     )
 );

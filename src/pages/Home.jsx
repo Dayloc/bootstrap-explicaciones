@@ -1,5 +1,6 @@
 import ohhhh from "../assets/img/ohhhh.avif";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import Dragonball from "./dragonball.jsx";
 
 export const Home = () => {
   const { store, dispatch } = useGlobalReducer();
@@ -24,6 +25,10 @@ export const Home = () => {
 		 En el menu encontrarás muchas soluciones.
         </p>
 		
+      </div>
+      <div>
+
+        <Dragonball/>
       </div>
     </div>
   );
