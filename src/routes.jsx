@@ -9,6 +9,21 @@ import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
+import Dflex from "./components/d-flex/d-flex";
+import Dflex1 from "./components/d-flex/d-flex-1";
+import FlexDirection from "./components/direccion/flex-direction"; 
+import FlexRow from "./components/direccion/flex-row";
+import FlexRowReverse from "./components/direccion/flex-row-reverse";
+import FlexColumn from "./components/direccion/flex-column";
+import FlexColumnReverse from "./components/direccion/flex-comun-reverse";
+import FlexboxExamples from "./components/alineacion/alineacion";
+import HorizontalAlignment from "./components/alineacion/horizontalAlignment";
+import VerticallAlignment from "./components/alineacion/verticalAlingnment";
+import IndividualAlignment from "./components/alineacion/individualAlignment";
+import Spacing from "./components/alineacion/spacing ";
+import Flexibility from "./components/alineacion/flexibilidad"
+import Responsiveness from "./components/alineacion/responsiv"
+import CompleteExample from "./components/alineacion/ejemploCompleto";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +40,21 @@ export const router = createBrowserRouter(
         <Route path= "/" element={<Home />} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
+        <Route path="/dflex" element={<Dflex />} />
+        <Route path="/dflex1" element={<Dflex1 />} />
+        <Route path="/dFlexDirection" element={<FlexDirection />} />
+        <Route path="/flex-row" element={<FlexRow />} />
+        <Route path="/flex-row-reverse" element={<FlexRowReverse />} />
+        <Route path="/flex-column" element={<FlexColumn />} />
+        <Route path="/flex-column-reverse" element={<FlexColumnReverse />} />
+        <Route path="/flexboxExamples" element={<FlexboxExamples />} />
+        <Route path="/horizontalAlingnment" element={<HorizontalAlignment />} />
+        <Route path="/verticalAlignment" element={<VerticallAlignment />} />
+        <Route path="/individualAlignment" element={<IndividualAlignment />} />
+        <Route path="/spacing" element={<Spacing />} />
+        <Route path="/flexibility" element={<Flexibility />} />
+        <Route path="/responsiv" element={<Responsiveness />} />
+        <Route path="/ejemploCompleto" element={<CompleteExample />} />
       </Route>
     )
 );

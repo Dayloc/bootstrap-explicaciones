@@ -1,0 +1,30 @@
+.lead{
+    font-family: 'Georgia', serif;
+}
+.hombre{
+    box-shadow: rgb(61, 65, 68);
+}
+.bpdy{height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+      margin: 0;
+    }
+    .wrapper {
+      min-height: 100%; /* Asegura que el contenido ocupe al menos toda la altura de la ventana */
+      display: flex;
+      flex-direction: column;
+    }
+    .content {
+      flex: 1; /* Hace que el contenido ocupe el espacio restante */
+    }
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .code-container{
+        background-color: #f8f9fa; /* Fondo claro */
+      padding: 15px; /* Espaciado interno */
+      border-radius: 5px; /* Bordes redondeados */
+      border: 1px solid #ddd; /* Borde */
+      margin: 20px 0; /* Margen exterior */
+      font-family: monospace; /* Fuente monoespaciada */
+    }
