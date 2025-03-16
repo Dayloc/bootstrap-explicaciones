@@ -26,7 +26,7 @@ export const Home = () => {
         </p>
 		
       </div>
-      <div>
+      <div className="">
 
         <Dragonball/>
       </div>
