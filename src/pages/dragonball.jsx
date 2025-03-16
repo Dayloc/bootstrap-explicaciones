@@ -36,7 +36,7 @@ function Dragonball() {
             <div className="col-12 col-md-4 mb-5" key={item.id}> {/* Cada columna */}
               <div className="dragonBall text-center p-3">
                 <strong>{item.name}</strong> - Raza: {item.race} - Ki: {item.ki}
-                <img src={item.image} alt={item.name} className="img-fluid mt-2" />
+                <img src={item.image} alt={item.name} className="charactersImg img-fluid mt-2" />
               </div>
             </div>
           ))
