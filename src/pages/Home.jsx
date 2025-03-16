@@ -1,12 +1,12 @@
 import ohhhh from "../assets/img/ohhhh.avif";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
-import Dragonball from "./dragonball.jsx";
+
 
 export const Home = () => {
   const { store, dispatch } = useGlobalReducer();
 
   return (
-    <div className="container text-center mt-5">
+    <div className="container text-center mt-5 ">
       <h1 className="text-info">Hola!!!!!</h1>
 
       {/* Contenedor para la imagen y el texto */}
@@ -28,7 +28,7 @@ export const Home = () => {
       </div>
       <div className="">
 
-        <Dragonball/>
+       
       </div>
     </div>
   );

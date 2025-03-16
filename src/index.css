@@ -46,6 +46,7 @@
       border-radius: 8px; /* Bordes redondeados para la imagen */
       box-shadow: 0 4px 8px rgba(61, 65, 68, 0.3); /* Sombra para la imagen */
       transition: box-shadow 0.5s ease; /* Transición suave para el hover */
+      background-color: dimgray;
     }
     
     .dragonBall img:hover {

@@ -32,6 +32,8 @@ export default function storeReducer(store, action = {}) {
       throw Error("Unknown action.");
   }
 }
+
+//Funcion para hacer la peticion Get
 export const fetchData = async (dispatch) => {
   try {
     // Despacha la acción para indicar que la solicitud ha comenzado
