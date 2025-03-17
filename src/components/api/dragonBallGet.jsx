@@ -1,21 +1,17 @@
 import React, { useEffect } from "react";
 import useGlobalReducer from "../../hooks/useGlobalReducer";
 import { fetchData } from "../../store";
-import peticionGet from "../../assets/img/peticionGet.png";
-import tratamientodeErrores from "../../assets/img/tratamientodeErrores.png";
-import almacenarVar from "../../assets/img/almacenarVar.png";
-import importaciones from "../../assets/img/importaciones.png";
+import { Link } from "react-router-dom"; // Importa Link
 
 function DragonBallGet() {
   const { dispatch, store } = useGlobalReducer();
+  // Desestructuración del estado
+  const { apiData, loading, error } = store;
 
-  // Efecto para cargar los datos al montar el componente
+  // Hook para cargar los datos al montar el componente
   useEffect(() => {
     fetchData(dispatch);
   }, [dispatch]);
-
-  // Desestructuración del estado
-  const { apiData, loading, error } = store;
 
   // Mostrar un mensaje de carga mientras se obtienen los datos
   if (loading) {
@@ -33,70 +29,24 @@ function DragonBallGet() {
   // Mostrar los datos si están disponibles
   return (
     <div className="container d-flex flex-column justify-content-center align-items-center">
-      <div className="mt-5">
-        <h3 className="text-info">
-          En esta parte explicaremos como implementar peticiones a una API.
-        </h3>
-      </div>
-      <div className="d-flex flex-column justify-content-start aling-self-start">
-        <h4 className="text-danger">Pasos a seguir:</h4>
-        <ol>
-          <li>Crear la funcion "GET" en el Store de nuestra app</li>
-          <img
-            src={peticionGet}
-            alt="peticionGet"
-            className="peticion img-fluid rounded me-3 shadow p-3 mb-5 bg-body-tertiary rounded"
-            style={{ maxWidth: "800px" }} // Ajusta el tamaño de la imagen
-          />
-          <li>Agregar los casos de errores en nuestro storeReducer </li>
-          <img
-            src={tratamientodeErrores}
-            alt="tratamientodeErrores"
-            className="erores img-fluid rounded me-3 shadow p-3 mb-5 bg-body-tertiary rounded"
-            style={{ maxWidth: "800px" }} // Ajusta el tamaño de la imagen
-          />
-          <li>
-            Crear las variables que me almacenaran en el store los datos que me
-            devuelve la API
-            <img
-            src={almacenarVar}
-            alt="almacenarVar"
-            className="almacenarVar img-fluid rounded me-3 shadow p-3 mb-5 bg-body-tertiary rounded"
-            style={{ maxWidth: "800px" }} // Ajusta el tamaño de la imagen
-          />
-
-          </li>
-
-          <li> Hacer las importaciones en el componente en el cual vallamos a mostrar esos datos.</li>
-          <img
-            src={importaciones}
-            alt="importaciones"
-            className="importaciones img-fluid rounded me-3 shadow p-3 mb-5 bg-body-tertiary rounded"
-            style={{ maxWidth: "800px" }} // Ajusta el tamaño de la imagen
-          />
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </div>
-      <h1 className="m-4">Dragonball</h1>
+      <h1 className="m-4">Personajes de Dragon Ball</h1>
       <div className="row">
-        {" "}
-        {/* Contenedor de la grid */}
         {hasData ? (
           apiData.items.map((item) => (
-            <div className="col-12 col-md-4 mb-5" key={item.id}>
-              {" "}
-              {/* Cada columna */}
-              <div className="dragonBall text-center p-3">
-                <strong>{item.name}</strong> - Raza: {item.race} - Ki: {item.ki}
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="charactersImg img-fluid mt-2"
-                />
-              </div>
+            <div className="col-12 col-md-4 mb-4" key={item.id}>
+             <Link to={`/character/${item.id}`} className="text-decoration-none"> {/* Enlace al detalle */}
+                <div className="card p-3 text-center">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="img-fluid mb-3"
+                    style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "10px" }}
+                  />
+                  <h5>{item.name}</h5>
+                  <p><strong>Raza:</strong> {item.race}</p>
+                  <p><strong>Ki:</strong> {item.ki}</p>
+                </div>
+              </Link>
             </div>
           ))
         ) : (
