@@ -22,24 +22,41 @@ const CharacterDetail = () => {
   if (!character) return <p>No se encontraron datos del personaje.</p>;
 
   return (
-    <div className="container">
+    <div className="container text-center text-center align-items-center">
       <p>{id}</p>
       <h1 className="text-center my-4">{character.name}</h1>
       <div className="row">
         <div className="col-12 col-md-6 mb-4">
-          <div className="card p-3">
+          <div className="card p-3 text-center align-items-center ">
             <img
               src={character.image}
               alt={character.name}
               className="img-fluid mb-3"
-              style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "10px" }}
+              style={{
+                width: "200px",
+                height: "200px",
+                objectFit: "contain",
+                borderRadius: "10px",
+              }}
             />
-            <p><strong>Ki:</strong> {character.ki}</p>
-            <p><strong>Max Ki:</strong> {character.maxKi}</p>
-            <p><strong>Raza:</strong> {character.race}</p>
-            <p><strong>Género:</strong> {character.gender}</p>
-            <p><strong>Descripción:</strong> {character.description}</p>
-            <p><strong>Afiliación:</strong> {character.affiliation}</p>
+            <p>
+              <strong>Ki:</strong> {character.ki}
+            </p>
+            <p>
+              <strong>Max Ki:</strong> {character.maxKi}
+            </p>
+            <p>
+              <strong>Raza:</strong> {character.race}
+            </p>
+            <p>
+              <strong>Género:</strong> {character.gender}
+            </p>
+            <p>
+              <strong>Descripción:</strong> {character.description}
+            </p>
+            <p>
+              <strong>Afiliación:</strong> {character.affiliation}
+            </p>
           </div>
         </div>
       </div>

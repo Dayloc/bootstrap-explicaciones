@@ -28,23 +28,38 @@ function DragonBallGet() {
 
   // Mostrar los datos si están disponibles
   return (
-    <div className="container d-flex flex-column justify-content-center align-items-center">
+    <div className="container  d-flex flex-column justify-content-center align-items-center">
       <h1 className="m-4">Personajes de Dragon Ball</h1>
       <div className="row">
         {hasData ? (
           apiData.items.map((item) => (
             <div className="col-12 col-md-4 mb-4" key={item.id}>
-             <Link to={`/characterDetail/${item.id}`} className="text-decoration-none"> {/* Enlace al detalle */}
-                <div className="card p-3 text-center">
+              <Link
+                to={`/characterDetail/${item.id}`}
+                className="text-decoration-none"
+              >
+                {" "}
+                {/* Enlace al detalle */}
+                <div className="card p-3 text-center align-items-center">
                   <img
                     src={item.image}
                     alt={item.name}
                     className="img-fluid mb-3"
-                    style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "10px" }}
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      objectFit: "contain",
+                      borderRadius: "10px",
+                      aling: "center",
+                    }}
                   />
                   <h5>{item.name}</h5>
-                  <p><strong>Raza:</strong> {item.race}</p>
-                  <p><strong>Ki:</strong> {item.ki}</p>
+                  <p>
+                    <strong>Raza:</strong> {item.race}
+                  </p>
+                  <p>
+                    <strong>Ki:</strong> {item.ki}
+                  </p>
                 </div>
               </Link>
             </div>
