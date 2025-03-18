@@ -34,7 +34,7 @@ function DragonBallGet() {
         {hasData ? (
           apiData.items.map((item) => (
             <div className="col-12 col-md-4 mb-4" key={item.id}>
-             <Link to={`/character/${item.id}`} className="text-decoration-none"> {/* Enlace al detalle */}
+             <Link to={`/characterDetail/${item.id}`} className="text-decoration-none"> {/* Enlace al detalle */}
                 <div className="card p-3 text-center">
                   <img
                     src={item.image}

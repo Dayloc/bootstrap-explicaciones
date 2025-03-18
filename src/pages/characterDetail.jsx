@@ -23,6 +23,7 @@ const CharacterDetail = () => {
 
   return (
     <div className="container">
+      <p>{id}</p>
       <h1 className="text-center my-4">{character.name}</h1>
       <div className="row">
         <div className="col-12 col-md-6 mb-4">
@@ -31,7 +32,7 @@ const CharacterDetail = () => {
               src={character.image}
               alt={character.name}
               className="img-fluid mb-3"
-              style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "10px" }}
+              style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "10px" }}
             />
             <p><strong>Ki:</strong> {character.ki}</p>
             <p><strong>Max Ki:</strong> {character.maxKi}</p>
