@@ -53,7 +53,7 @@ export const Navbar = () => {
 
             <ul class="dropdown-menu">
               <li><Link to="/dragonBallGet">API "GET" </Link></li>
-              <li><Link to="/dragonBallGetId">API "GET" por Id </Link></li>
+              <li><Link to="/tudoUsers" >API "TodoUsersGet" </Link></li>
               <li><Link >API "POST" </Link></li>
               <li><Link >API "PUT" </Link></li>
               <li><Link >API "DELETE" </Link></li>

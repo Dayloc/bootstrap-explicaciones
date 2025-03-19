@@ -11,6 +11,7 @@ function DragonBallGet() {
   // Hook para cargar los datos al montar el componente
   useEffect(() => {
     fetchData(dispatch);
+   
   }, [dispatch]);
 
   // Mostrar un mensaje de carga mientras se obtienen los datos
@@ -28,19 +29,16 @@ function DragonBallGet() {
 
   // Mostrar los datos si están disponibles
   return (
-    <div className="container  d-flex flex-column justify-content-center align-items-center">
+    <div className="container  d-flex flex-column justify-content-center align-items-center ">
       <h1 className="m-4">Personajes de Dragon Ball</h1>
       <div className="row">
         {hasData ? (
           apiData.items.map((item) => (
-            <div className="col-12 col-md-4 mb-4" key={item.id}>
-              <Link
-                to={`/characterDetail/${item.id}`}
-                className="text-decoration-none"
-              >
+            <div className="col-12 col-md-4 mb-4 " key={item.id}>
+             
                 {" "}
                 {/* Enlace al detalle */}
-                <div className="card p-3 text-center align-items-center">
+                <div className="card p-3 text-center align-items-center bg-dark text-white">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -60,14 +58,22 @@ function DragonBallGet() {
                   <p>
                     <strong>Ki:</strong> {item.ki}
                   </p>
-                </div>
+                  <Link
+                to={`/characterDetail/${item.id}`}
+                className="text-decoration-none"
+              >Detalle del Personaje
+
               </Link>
+                </div>
+                
+
             </div>
           ))
         ) : (
           <p>No hay datos disponibles</p>
         )}
       </div>
+      <Link to="/">Back</Link>
     </div>
   );
 }

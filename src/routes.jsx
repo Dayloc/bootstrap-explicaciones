@@ -27,7 +27,7 @@ import CompleteExample from "./components/alineacion/ejemploCompleto";
 import Dragonball from "./pages/dragonball"
 import CharacterDetail from "./pages/characterDetail"
 import DragonBallGet from "./components/api/dragonBallGet";
-//import DragonBallGetId from "./pages/dragonBallGetId";
+import TodoUsers from "./pages/todoUsers";
 
 
 
@@ -63,7 +63,7 @@ export const router = createBrowserRouter(
         <Route path="/ejemploCompleto" element={<CompleteExample />} />
         <Route path="/dragonball" element={<Dragonball />} />
         <Route path="/dragonballGet" element={<DragonBallGet />} />
-        
+        <Route path="/tudoUsers" element={<TodoUsers />} />
         <Route path="/characterDetail/:id" element={<CharacterDetail />} />
       </Route>
     )
