@@ -37,6 +37,12 @@ export default function storeReducer(store, action = {}) {
         loading: false,
         users: action.payload, // Almacena los usuarios
       };
+    case "create_user_success": // Agrega este caso
+      return {
+        ...store,
+        loading: false,
+        users: [...store.users.users, action.payload], // Agrega el nuevo usuario a la lista
+      };
     case "fetch_data_error":
       return {
         ...store,
@@ -44,7 +50,7 @@ export default function storeReducer(store, action = {}) {
         error: action.payload,
       };
     default:
-      throw Error("Unknown action.");
+      throw new Error("Unknown action."); // Lanza un error si la acción no es reconocida
   }
 }
 
@@ -89,17 +95,15 @@ export const getUsers = async (dispatch) => {
     dispatch({ type: "fetch_data_error", payload: error.message });
   }
 };
-export const createUser = async (dispatch, user) => {
+export const createUser = async (dispatch, userName) => {
   try {
-    // Indica que la solicitud ha comenzado
-    dispatch({ type: "fetch_data_start" });
-
-    // Realiza la solicitud POST a la API
-    const response = await fetch(`https://playground.4geeks.com/todo/users/${user}`, {
+    // Realiza la solicitud POST para crear un usuario
+    const response = await fetch(`https://playground.4geeks.com/todo/users/${userName}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      // No es necesario enviar un body
     });
 
     // Verifica si la respuesta es exitosa
@@ -114,9 +118,12 @@ export const createUser = async (dispatch, user) => {
     dispatch({ type: "create_user_success", payload: data });
 
     // Vuelve a obtener la lista de usuarios actualizada
-    getUsers(dispatch);
+    await getUsers(dispatch); // Espera a que termine esta operación
   } catch (error) {
     // Despacha la acción para manejar el error
     dispatch({ type: "fetch_data_error", payload: error.message });
+
+    // Opcional: Mostrar el error en la consola para depuración
+    console.error("Error en createUser:", error);
   }
 };
