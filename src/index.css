@@ -1,54 +1,47 @@
-.lead{
-    font-family: 'Georgia', serif;
+/* Estilos para el contenedor */
+.dragonBall {
+  padding: 15px;
+  margin-bottom: 20px;
 }
-.hombre{
-    box-shadow: rgb(61, 65, 68);
+
+.responsive-image-container {
+  width: 100%;
+  text-align: center;
 }
-.bpdy{height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
-      margin: 0;
-    }
-    .wrapper {
-      min-height: 100%; /* Asegura que el contenido ocupe al menos toda la altura de la ventana */
-      display: flex;
-      flex-direction: column;
-    }
-    .content {
-      flex: 1; /* Hace que el contenido ocupe el espacio restante */
-    }
-    .footer {
-      background-color: #f8f9fa;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .code-container{
-        background-color: #f8f9fa; /* Fondo claro */
-      padding: 15px; /* Espaciado interno */
-      border-radius: 5px; /* Bordes redondeados */
-      border: 1px solid #ddd; /* Borde */
-      margin: 20px 0; /* Margen exterior */
-      font-family: monospace; /* Fuente monoespaciada */
-    }
-    .dragonBall {
-      width: 200px;
-      height: 200px;
-      /* overflow: hidden;  Opcional: para recortar el exceso */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 10px; /* Espacio interno */
-    }
-    
-    .dragonBall img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Ajusta la imagen al contenedor */
-      border-radius: 8px; /* Bordes redondeados para la imagen */
-      box-shadow: 0 4px 8px rgba(61, 65, 68, 0.3); /* Sombra para la imagen */
-      transition: box-shadow 0.5s ease; /* Transición suave para el hover */
-      background-color: dimgray;
-    }
-    
-    .dragonBall img:hover {
-      box-shadow: 0 8px 16px rgba(61, 65, 68, 0.5); /* Sombra más pronunciada al hacer hover */
-    }
+
+.responsive-image {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+/* Tamaños responsivos */
+.responsive-image {
+  width: 100%;  /* Default para móviles */
+  height: auto;
+}
+
+@media (min-width: 576px) {  /* sm */
+  .responsive-image {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {  /* md */
+  .responsive-image {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {  /* lg */
+  .responsive-image {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1200px) {  /* xl */
+  .responsive-image {
+    width: 30%;
+  }
+}

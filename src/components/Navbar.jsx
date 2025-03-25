@@ -37,6 +37,11 @@ export const Navbar = () => {
                     <span className="navbar-brand mb-0 h1">Alineación</span>
                   </Link>
                 </li>
+                <li className="ms-2">
+                  <Link to="/paginaResponsive">
+                    <span className="navbar-brand mb-0 h1">Ejemplos responsive</span>
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

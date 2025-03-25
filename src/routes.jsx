@@ -28,7 +28,7 @@ import Dragonball from "./pages/dragonball"
 import CharacterDetail from "./pages/characterDetail"
 import DragonBallGet from "./components/api/dragonBallGet";
 import TodoUsers from "./pages/todoUsers";
-
+import PaginaResponsiveEjemplos from "./pages/paginaResponsiveEjemplos";
 
 
 export const router = createBrowserRouter(
@@ -65,6 +65,7 @@ export const router = createBrowserRouter(
         <Route path="/dragonballGet" element={<DragonBallGet />} />
         <Route path="/tudoUsers" element={<TodoUsers />} />
         <Route path="/characterDetail/:id" element={<CharacterDetail />} />
+        <Route path="/paginaresponsive" element={<PaginaResponsiveEjemplos/>}/>
       </Route>
     )
 );
